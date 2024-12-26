@@ -1,0 +1,1 @@
+nae's tech is nadine's portfolio website. built with react and vite. v2.0 coming soon!

@@ -1,0 +1,86 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(242, 253, 255, 0.95);
+  z-index: 1000;
+  padding: 0 1rem;
+}
+
+.logo {
+  padding: 1rem;
+  color: #658BB7;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.navItem {
+  color: #343434;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  color: #343434;
+}
+
+/* Collapsed state - only affects the nav items */
+.collapsed .nav {
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Show nav items on hover */
+.collapsed:hover .nav {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background-color: rgba(52, 52, 52, 0.95);
+  }
+
+  .navItem, .separator {
+    color: #F2FDFF;
+  }
+}
+
+/* Add media query for mobile */
+@media (max-width: 768px) {
+  .nav {
+    gap: 0.3rem;
+  }
+  
+  .navItem {
+    font-size: 0.8rem;
+  }
+  
+  .separator {
+    margin: 0 0.2rem;
+  }
+}
