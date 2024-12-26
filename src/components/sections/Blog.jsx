@@ -2,7 +2,7 @@ import styles from '../../styles/modules/Section.module.css'
 
 function Blog() {
   return (
-    <section className={styles.section} id="blog">
+    <section className={`${styles.section} ${styles.blog}`} id="blog">
       <div className={styles.content}>
         {/* Your section content will go here */}
       </div>

@@ -1,31 +1,40 @@
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 function SectionTransition({ children, direction = null, isFade = false }) {
-  const variants = {
-    fade: {
-      initial: { opacity: 0 },
-      animate: { opacity: 1 },
-      exit: { opacity: 0 }
-    },
-    slide: {
-      initial: { x: direction === 'right' ? '100%' : '-100%', opacity: 0 },
-      animate: { x: 0, opacity: 1 },
-      exit: { x: direction === 'right' ? '-100%' : '100%', opacity: 0 }
-    }
-  }
+  const { scrollYProgress } = useScroll({
+    offset: ["start end", "end start"]
+  })
 
-  const transition = {
-    duration: 0.6,
-    ease: "easeInOut"
-  }
+  const x = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.4, 0.6, 0.7, 1],
+    [
+      direction === 'right' ? 100 : -100,
+      direction === 'right' ? 50 : -50,
+      0,
+      0,
+      direction === 'right' ? -50 : 50,
+      direction === 'right' ? -100 : 100
+    ]
+  )
+
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.4, 0.6, 0.7, 1],
+    [0, 0.5, 1, 1, 0.5, 0]
+  )
 
   return (
     <motion.div
-      variants={isFade ? variants.fade : variants.slide}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={transition}
+      style={{
+        x: isFade ? 0 : x,
+        opacity: opacity,
+        transition: {
+          type: "spring",
+          stiffness: 100,
+          damping: 20
+        }
+      }}
     >
       {children}
     </motion.div>

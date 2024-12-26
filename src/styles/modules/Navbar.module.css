@@ -5,19 +5,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(242, 253, 255, 0.95);
+  background-color: #FAF9E3;
   z-index: 1000;
   padding: 0 1rem;
 }
 
 .logo {
-  padding: 1rem;
-  color: #658BB7;
-  font-size: 1.5rem;
-  font-weight: bold;
+  padding: 0.3rem;
   text-decoration: none;
   cursor: pointer;
   transition: opacity 0.2s ease;
+}
+
+.logo img {
+  height: 64px;
+  width: auto;
+  display: block;
 }
 
 .logo:hover {
@@ -37,7 +40,7 @@
 
 .navItem {
   color: #343434;
-  text-decoration: none;
+  text-decoration: underline;
   display: flex;
   align-items: center;
 }
@@ -60,16 +63,6 @@
   visibility: visible;
 }
 
-@media (prefers-color-scheme: dark) {
-  .navbar {
-    background-color: rgba(52, 52, 52, 0.95);
-  }
-
-  .navItem, .separator {
-    color: #F2FDFF;
-  }
-}
-
 /* Add media query for mobile */
 @media (max-width: 768px) {
   .nav {
@@ -82,5 +75,15 @@
   
   .separator {
     margin: 0 0.2rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background-color: #4A3E34;
+  }
+
+  .navItem, .separator {
+    color: #F2FDFF;
   }
 }

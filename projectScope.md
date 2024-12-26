@@ -31,7 +31,8 @@ A single-page portfolio website with smooth section transitions and a two-row na
 src/
 ├── components/
 │   ├── layout/
-│   │   └── Navbar.jsx
+│   │   ├── Navbar.jsx
+│   │   └── SectionTransition.jsx
 │   └── sections/
 │       ├── About.jsx
 │       ├── Blog.jsx
@@ -57,14 +58,22 @@ src/
   - Adjusted section sizing and overflow issues
   - Improved image placeholder responsiveness
   - Removed Home from nav menu and made logo clickable
+- [03/20/24] Enhanced About section:
+  - Added two-column layout with image and text
+  - Implemented scroll-based animations with Framer Motion
+  - Created visual placeholders for profile image
+  - Added responsive text formatting and styling
 
 ## Next Steps
 1. Implement remaining section components:
-   - About (two-column layout with image and text)
    - Projects (three-row grid layout)
    - Blog (latest Substack article with "read more" link)
    - Contact (form and social media links)
-2. Add Framer Motion animations:
-   - Fade transition for Home to About
-   - Alternating slide transitions for subsequent sections
-3. Add content and replace placeholder blocks 
+2. Fine-tune animations:
+   - Adjust timing for smoother transitions
+   - Add hover effects for interactive elements
+3. Add actual content:
+   - Replace profile image placeholder
+   - Add project thumbnails and descriptions
+   - Connect blog feed
+   - Set up contact form functionality 

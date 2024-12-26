@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 import styles from '../../styles/modules/Navbar.module.css'
+import naeLogo from '/nae.png'
 
 function Navbar() {
   const [isCollapsed, setIsCollapsed] = useState(false)
@@ -16,15 +17,17 @@ function Navbar() {
 
   return (
     <header className={`${styles.navbar} ${isCollapsed ? styles.collapsed : ''}`}>
-      <Link to="/" className={styles.logo}>naes.tech</Link>
+      <Link to="/#home" className={styles.logo}>
+        <img src={naeLogo} alt="naes.tech logo" />
+      </Link>
       <nav className={styles.nav}>
-        <Link to="/about" className={styles.navItem}>About</Link>
+        <Link smooth to="/#about" className={styles.navItem}>about</Link>
         <span className={styles.separator}>::</span>
-        <Link to="/projects" className={styles.navItem}>Projects</Link>
+        <Link smooth to="/#projects" className={styles.navItem}>projects</Link>
         <span className={styles.separator}>::</span>
-        <Link to="/blog" className={styles.navItem}>Blog</Link>
+        <Link smooth to="/#blog" className={styles.navItem}>blog</Link>
         <span className={styles.separator}>::</span>
-        <Link to="/contact" className={styles.navItem}>Contact</Link>
+        <Link smooth to="/#contact" className={styles.navItem}>contact</Link>
       </nav>
     </header>
   )

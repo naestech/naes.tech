@@ -4,9 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F2FDFF; /* Light mode background */
-  color: #343434; /* Light mode text */
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  background-color: #FAF9E3;
+  color: #343434;
+  overflow-x: hidden;
 }
 
 .content {
@@ -16,18 +16,34 @@
   padding: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  .section {
-    background-color: #343434;
-    color: #F2FDFF;
-  }
-}
-
 .imagePlaceholder {
   background-color: white;
   border: 2px dashed #658BB7;
   width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #658BB7;
+  position: relative;
+  overflow: hidden;
+}
+
+.imagePlaceholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  background: linear-gradient(45deg, #658BB7 25%, transparent 25%),
+              linear-gradient(-45deg, #658BB7 25%, transparent 25%),
+              linear-gradient(45deg, transparent 75%, #658BB7 75%),
+              linear-gradient(-45deg, transparent 75%, #658BB7 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  opacity: 0.1;
 }
 
 .homeImage {
@@ -39,7 +55,88 @@
 /* Dark mode adjustment */
 @media (prefers-color-scheme: dark) {
   .imagePlaceholder {
-    background-color: #454545;
+    background-color: #5A4E44;
+    border-color: #F2FDFF;
+    color: #F2FDFF;
+  }
+
+  .imagePlaceholder::before {
+    background: linear-gradient(45deg, #F2FDFF 25%, transparent 25%),
+                linear-gradient(-45deg, #F2FDFF 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #F2FDFF 75%),
+                linear-gradient(-45deg, transparent 75%, #F2FDFF 75%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .section {
+    background-color: #4A3E34;
+    color: #F2FDFF;
+  }
+}
+
+.section.about {
+  background-color: #4D4036;
+}
+
+.section.projects {
+  background-color: #665547;
+}
+
+.section.blog {
+  background-color: #806A59;
+}
+
+.section.contact {
+  background-color: #99806B;
+}
+
+.twoColumnLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.imageColumn, .textColumn {
+  width: 100%;
+}
+
+.textColumn {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.aboutText {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.emphasis {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.placeholder {
+  border: 2px dashed #658BB7;
+  padding: 1rem;
+  border-radius: 4px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .twoColumnLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .placeholder {
     border-color: #F2FDFF;
   }
 }
