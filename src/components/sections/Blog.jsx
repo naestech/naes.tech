@@ -20,7 +20,7 @@ function Blog() {
     <section className={`${styles.section}`} id="blog">
       <div className={styles.content}>
         <div className={styles.blogPreview}>
-          <div id="substack-feed-embed">Loading latest post...</div>
+          <div id="substack-feed-embed"></div>
           <a 
             href="https://technaelogy.substack.com" 
             target="_blank" 
