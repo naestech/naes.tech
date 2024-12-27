@@ -4,7 +4,24 @@ function Projects() {
   return (
     <section className={`${styles.section} ${styles.projects}`} id="projects">
       <div className={styles.content}>
-        {/* Your section content will go here */}
+        {/* Three-row layout */}
+        <div className={styles.projectRows}>
+          <div className={styles.projectRow}>
+            <div className={styles.placeholder}>
+              <span>Featured Project</span>
+            </div>
+          </div>
+          <div className={styles.projectRow}>
+            <div className={styles.placeholder}>
+              <span>Recent Work</span>
+            </div>
+          </div>
+          <div className={styles.projectRow}>
+            <div className={styles.placeholder}>
+              <span>Past Projects</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

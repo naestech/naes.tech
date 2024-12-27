@@ -1,5 +1,6 @@
 import { HashRouter } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
 import Home from './components/sections/Home'
 import About from './components/sections/About'
 import Projects from './components/sections/Projects'
@@ -18,6 +19,7 @@ function App() {
           <Blog />
           <Contact />
         </main>
+        <Footer />
       </div>
     </HashRouter>
   )

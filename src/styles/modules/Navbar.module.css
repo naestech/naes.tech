@@ -51,14 +51,12 @@
 
 /* Collapsed state - only affects the nav items */
 .collapsed .nav {
-  transform: translateY(-100%);
   opacity: 0;
   visibility: hidden;
 }
 
 /* Show nav items on hover */
 .collapsed:hover .nav {
-  transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
