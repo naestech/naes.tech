@@ -52,7 +52,6 @@
   margin: 0 auto;
 }
 
-/* Dark mode adjustment */
 @media (prefers-color-scheme: dark) {
   .imagePlaceholder {
     background-color: #5A4E44;
@@ -80,7 +79,7 @@
 }
 
 .section.projects {
-  background-color: #665547;
+  background-color: #FAF9E3;
 }
 
 .section.blog {
@@ -88,7 +87,7 @@
 }
 
 .section.contact {
-  background-color: #99806B;
+  background-color: #FAF9E3;
 }
 
 .twoColumnLayout {
@@ -145,16 +144,26 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .projectRow {
   width: 100%;
-  min-height: 200px; 
 }
 
 @media (max-width: 768px) {
-  .projectRow {
-    min-height: 150px; /* Smaller height for mobile */
+  .projectCard {
+    min-height: 150px;
+    padding: 1.5rem;
+  }
+  
+  .projectCard h3 {
+    font-size: 1.2rem;
+  }
+  
+  .projectCard p {
+    font-size: 1rem;
   }
 }
 
@@ -216,4 +225,73 @@
   .section.blog {
     background-color: #4A3E34;
   }
+}
+
+.projectCard {
+  background-color: #7287A3;
+  border-radius: 8px;
+  padding: 2rem;
+  color: #FFFFFF;
+  text-align: left;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.projectCard h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.projectCard p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.projectLinks {
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+.projectLinks a {
+  color: #FFFFFF;
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.projectLinks a:hover {
+  opacity: 1;
+}
+
+.linkSeparator {
+  margin: 0 0.5rem;
+  opacity: 0.9;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section.projects {
+    background-color: #4A3E34;
+  }
+}
+
+.contactWrapper,
+.contactLinks,
+.contactRows .projectCard {
+  display: none;
+}
+
+.projectCard a {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+.projectCard a:hover {
+  opacity: 1;
 }
