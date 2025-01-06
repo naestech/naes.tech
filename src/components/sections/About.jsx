@@ -6,9 +6,11 @@ function About() {
       <div className={styles.content}>
         <div className={styles.twoColumnLayout}>
           <div className={styles.imageColumn}>
-            <div className={styles.imagePlaceholder}>
-              <span>manilla folder goes here</span>
-            </div>
+            <img 
+              src="/naes.png" 
+              alt="stylized picture of nadine" 
+              className={styles.profileImage}
+            />
           </div>
           <div className={styles.textColumn}>
             <div>
